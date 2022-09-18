@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Chicken Management System </title>
+    </head>
+    <body>
+        <h1> Chicken Management System </h1>
+        Currently serving {{ chickens }}
+    </body>
+    <h2>Information </h2>
+<table>
+    <tr>
+        <th> Point Name </th>
+        <th> Value </th>
+        <th> Setpoint </th>
+        <th> Alert </th>
+    </tr>
+    <tr>
+        <td> Inside Temperature (F) </td>
+        <td> {{ states.InsideTemp }} </td>
+        <td> {{ states.InsideTempSP }} </td>
+        <td> ALERT </td>
+    </tr>
+    <tr>
+        <td> Outside Temperature (F) </td>
+        <td> {{ states.OutsideTemp }} </td>
+        <td> N/A </td>
+        <td> N/A </td>
+    </tr>
+    <tr>
+        <td> Inside Humidity (%RH) </td>
+        <td> {{ states.InsideHum }} </td>
+        <td> {{ states.InsideHumSP }} </td>
+        <td> ALERT </td>
+    </tr>
+    <tr>
+        <td> Outside Humidity (%RH) </td>
+        <td> {{ states.OutsideHum }} </td>
+        <td> N/A </td>
+        <td> N/A </td>
+    </tr>
+    <tr>
+        <td> Heat Lamp </td>
+        <td> {% if states.HeadLampState %} on {% else %} off {% endif %} </td>
+        <td> N/A </td>
+        <td> N/A </td>
+    </tr>
+    <tr>
+        <td> Door </td>
+        <td> {% if states.DoorState %} open {% else %} closed {% endif %} </td>
+        <td> N/A </td>
+        <td> N/A </td>
+    </tr>
+    <tr>
+        <td> Fan </td>
+        <td> {% if states.FanState %} on {% else %} off {% endif %} </td>
+        <td> N/A </td>
+        <td> N/A </td>
+    </tr>
+</table>
+</html>
