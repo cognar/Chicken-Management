@@ -20,5 +20,5 @@ def returnPointsList():
 
 @app.route('/post', methods = ["POST"])
 def post():
-    states.InsideTemp = request.data
+    states["InsideTemp"] = request.data
     return state
