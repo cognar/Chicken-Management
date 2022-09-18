@@ -20,5 +20,5 @@ def returnPointsList():
 
 @app.route('/post', methods = ["POST"])
 def post():
-    print(request.data)
-    return ''
+    state = request.data
+    return state
