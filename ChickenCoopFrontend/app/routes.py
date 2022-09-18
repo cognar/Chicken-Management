@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, request
 from app import app
 
 
@@ -14,3 +14,11 @@ def index():
 def helloHandler():
     return 'Hello ESP!'
 
+@app.route('/PointsList')
+def returnPointsList():
+    return 70
+
+@app.route('/post', methods = ["POST"])
+def post():
+    print(request.data)
+    return ''
